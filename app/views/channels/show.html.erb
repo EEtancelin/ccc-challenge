@@ -1,0 +1,5 @@
+<div id="ccc_app" data-channels= <%= JSON.generate(@channels.uniq) %> ></div>
+
+<% content_for :after_js do %>
+  <%= javascript_pack_tag "ccc" %>
+<% end %>

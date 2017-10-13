@@ -1,0 +1,16 @@
+development:
+  adapter: async
+
+test:
+  adapter: async
+
+
+production:
+  adapter: redis
+  url: redis://redistogo:352d799c89b3fbc736b4b32fdb971c8f@jack.redistogo.com:11701/
+  channel_prefix: ccc-rails-redux_production
+
+# http://guides.rubyonrails.org/action_cable_overview.html
+
+# set up redistogo pour deployer facilement redis avec heroku
+# https://devcenter.heroku.com/articles/heroku-redis

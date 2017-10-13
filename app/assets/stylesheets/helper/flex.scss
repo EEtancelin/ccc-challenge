@@ -1,0 +1,39 @@
+
+//Settings
+$flex-properties: (
+  l    : left,
+  c    : center,
+  r    : right,
+  sa   : space-around,
+  sb   : space-between,
+  fs   : flex-start,
+  fe   : flex-end,
+  s    : stretch ,
+  se   : space-evenly,
+);
+
+@each $align-key, $alignproperty in $flex-properties{
+  @each $justify-key, $justifyproperty in $flex-properties{
+
+    /* Flex row */
+    .#{$prefix}fx-r#{$delimiter1}#{if($justify-key != '', $delimiter2 + $justify-key, '')}#{if($align-key != '', $delimiter2 + $align-key, '')} {
+      display: flex;
+      flex-direction: row;
+      justify-content: $justifyproperty;
+      align-items: $alignproperty;
+
+    }
+  }
+
+@each $align-key, $alignproperty in $flex-properties{
+  @each $justify-key, $justifyproperty in $flex-properties{
+    /* Flex row */
+    .#{$prefix}fx-c#{$delimiter1}#{if($justify-key != '', $delimiter2 + $justify-key, '')}#{if($align-key != '', $delimiter2 + $align-key, '')} {
+      display: flex;
+      flex-direction: column;
+      justify-content: $justifyproperty;
+      align-items: $alignproperty;
+  }
+}
+}
+}
