@@ -1,34 +1,34 @@
 @each $name, $size in $sizes {
 
   /* margin-top */
-  .#{$prefix}m#{$delimiter1}t#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}m#{$sd1}t#{if($name != '', $sd2 + $name, '')} {
     margin-top: #{$size} !important;
   }
   /* margin-right */
-  .#{$prefix}m#{$delimiter1}r#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}m#{$sd1}r#{if($name != '', $sd2 + $name, '')} {
     margin-right: #{$size} !important;
   }
   /* margin-bottom */
-  .#{$prefix}m#{$delimiter1}b#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}m#{$sd1}b#{if($name != '', $sd2 + $name, '')} {
     margin-bottom: #{$size} !important;
   }
   /* margin-left */
-  .#{$prefix}m#{$delimiter1}l#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}m#{$sd1}l#{if($name != '', $sd2 + $name, '')} {
     margin-left: #{$size} !important;
   }
 
   /* horizontal margins */
-  .#{$prefix}m#{$delimiter1}#{$h}#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}m#{$sd1}#{$h}#{if($name != '', $sd2 + $name, '')} {
     margin-left: #{$size} !important;
     margin-right: #{$size} !important;
   }
   /* vertical margins */
-  .#{$prefix}m#{$delimiter1}#{$v}#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}m#{$sd1}#{$v}#{if($name != '', $sd2 + $name, '')} {
     margin-top: #{$size} !important;
     margin-bottom: #{$size} !important;
   }
   /* all margins */
-  .#{$prefix}m#{$delimiter1}#{$a}#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}m#{$sd1}#{$a}#{if($name != '', $sd2 + $name, '')} {
     margin: #{$size} !important;
   }
 }
@@ -45,34 +45,34 @@
   @if $size != 0 {
 
     /* margin-top */
-    .#{$prefix}m#{$delimiter1}t#{if($name != '', $neg + $delimiter2 + $name, $neg)} {
+    .#{$prefix}m#{$sd1}t#{if($name != '', $neg + $sd2 + $name, $neg)} {
       margin-top: -#{$size} !important;
     }
     /* margin-right */
-    .#{$prefix}m#{$delimiter1}r#{if($name != '', $neg + $delimiter2 + $name, $neg)} {
+    .#{$prefix}m#{$sd1}r#{if($name != '', $neg + $sd2 + $name, $neg)} {
       margin-right: -#{$size} !important;
     }
     /* margin-bottom */
-    .#{$prefix}m#{$delimiter1}b#{if($name != '', $neg + $delimiter2 + $name, $neg)} {
+    .#{$prefix}m#{$sd1}b#{if($name != '', $neg + $sd2 + $name, $neg)} {
       margin-bottom: -#{$size} !important;
     }
     /* margin-left */
-    .#{$prefix}m#{$delimiter1}l#{if($name != '', $neg + $delimiter2 + $name, $neg)} {
+    .#{$prefix}m#{$sd1}l#{if($name != '', $neg + $sd2 + $name, $neg)} {
       margin-left: -#{$size} !important;
     }
 
     /* horizontal margins */
-    .#{$prefix}m#{$delimiter1}#{$h}#{if($name != '', $neg + $delimiter2 + $name, $neg)} {
+    .#{$prefix}m#{$sd1}#{$h}#{if($name != '', $neg + $sd2 + $name, $neg)} {
       margin-left: -#{$size} !important;
       margin-right: -#{$size} !important;
     }
     /* vertical margins */
-    .#{$prefix}m#{$delimiter1}#{$v}#{if($name != '', $neg + $delimiter2 + $name, $neg)} {
+    .#{$prefix}m#{$sd1}#{$v}#{if($name != '', $neg + $sd2 + $name, $neg)} {
       margin-top: -#{$size} !important;
       margin-bottom: -#{$size} !important;
     }
     /* all margins */
-    .#{$prefix}m#{$delimiter1}#{$a}#{if($name != '', $neg + $delimiter2 + $name, $neg)} {
+    .#{$prefix}m#{$sd1}#{$a}#{if($name != '', $neg + $sd2 + $name, $neg)} {
       margin: -#{$size} !important;
     }
 

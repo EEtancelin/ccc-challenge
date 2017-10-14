@@ -1,6 +1,6 @@
 
 //Settings
-$flex-properties: (
+$flex-aligments: (
   l    : left,
   c    : center,
   r    : right,
@@ -12,28 +12,33 @@ $flex-properties: (
   se   : space-evenly,
 );
 
-@each $align-key, $alignproperty in $flex-properties{
-  @each $justify-key, $justifyproperty in $flex-properties{
+$flex-directions: (
+  r    : row,
+  c    : column,
+);
 
-    /* Flex row */
-    .#{$prefix}fx-r#{$delimiter1}#{if($justify-key != '', $delimiter2 + $justify-key, '')}#{if($align-key != '', $delimiter2 + $align-key, '')} {
-      display: flex;
-      flex-direction: row;
-      justify-content: $justifyproperty;
-      align-items: $alignproperty;
+/* Flex Helper
+  Syntax
+  .fx-{flex-direction}-{justify-content}-{align-items}
 
+  Example
+ .fx-r-sa-sb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: space-between;
+}
+*/
+
+@each $direction-key, $direction-property in $flex-directions{
+  @each $align-key, $align-property in $flex-aligments{
+    @each $justify-key, $justify-property in $flex-aligments{
+      .#{$prefix}fx#{$sd2}#{$direction-key}#{$sd2}#{$justify-key}#{$sd2}#{$align-key}{
+        display: flex;
+        flex-direction: $direction-property;
+        justify-content: $justify-property;
+        align-items: $align-property;
+      }
     }
   }
-
-@each $align-key, $alignproperty in $flex-properties{
-  @each $justify-key, $justifyproperty in $flex-properties{
-    /* Flex row */
-    .#{$prefix}fx-c#{$delimiter1}#{if($justify-key != '', $delimiter2 + $justify-key, '')}#{if($align-key != '', $delimiter2 + $align-key, '')} {
-      display: flex;
-      flex-direction: column;
-      justify-content: $justifyproperty;
-      align-items: $alignproperty;
-  }
-}
-}
 }

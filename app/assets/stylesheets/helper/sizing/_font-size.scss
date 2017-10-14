@@ -1,7 +1,7 @@
 @each $name, $size in $sizes {
 
   /* margin-top */
-  .#{$prefix}f#{$delimiter1}s#{if($name != '', $delimiter2 + $name, '')} {
+  .#{$prefix}f#{$sd1}s#{if($name != '', $sd2 + $name, '')} {
     font-size: #{$size} !important;
   }
 }
