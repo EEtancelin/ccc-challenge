@@ -2,6 +2,9 @@ import React from 'react';
 import smoothscroll from 'smoothscroll';
 import banner from 'fight.jpg'
 
+// Components
+import CharacterList from '../containers/character_list';
+
 // Helping Functions
 const bannerStyle = (backgroundImage) => {
   return ({
@@ -11,7 +14,7 @@ const bannerStyle = (backgroundImage) => {
 
 // Scroll to the Character Session
 const onPLayClick = () => {
-  const destination = document.querySelector('.character');
+  const destination = document.querySelector('.character-section');
   smoothscroll(destination, 1300)
 }
 
@@ -28,8 +31,11 @@ const App = (props) => {
             onClick={onPLayClick}>
             Play now</a>
       </div>
-      <div className="character h-100vh">
-        Coucou Ici il va y avoir des personnages bientôt ;-)
+      <div className="character-section h-100vh pt-m">
+        <h2 className="fx-r-sa-sa fs-l ff-fight-font">
+          Who gonna fight  ?
+        </h2>
+        <CharacterList />
       </div>
     </div>
   );

@@ -13,16 +13,19 @@ const cccContainer = document.getElementById('ccc_app');
 
 const channelsInitial = JSON.parse(cccContainer.dataset.channels);
 
+import avocat from 'avocat.png';
+import avocat2 from 'avocat2.png';
 // debugger;
 
 const initialState = {
-  messages: [],
-  channels: channelsInitial, // TODO: get that from Rails DB.
+  characters: [
+    { name: "Maitre Mo", thumbnail: avocat },
+    { name: "Maitre Eolas", thumbnail: avocat2 },
+  ],
 };
 
 const reducers = combineReducers({
-  messages: messagesReducer,
-  channels: (state = null, action) => state
+  characters: (state = null, action) => state
 });
 
 const middlewares = applyMiddleware(logger, ReduxPromise);
@@ -32,7 +35,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route path="/channels/:channel" component={App} />
+        <Route path="/" component={App} />
       </Switch>
     </BrowserRouter>
   </Provider>,
