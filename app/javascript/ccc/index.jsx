@@ -5,27 +5,23 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger'
 import ReduxPromise from 'redux-promise';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { reducer as formReducer } from 'redux-form'
 
 import App from './components/app';
-import messagesReducer from './reducers/messages_reducer';
-
 const cccContainer = document.getElementById('ccc_app');
 
-const channelsInitial = JSON.parse(cccContainer.dataset.channels);
-
-import avocat from 'avocat.png';
-import avocat2 from 'avocat2.png';
+// Import Initial state
+import { characters } from './initial_state.js';
 // debugger;
 
 const initialState = {
-  characters: [
-    { name: "Maitre Mo", thumbnail: avocat },
-    { name: "Maitre Eolas", thumbnail: avocat2 },
-  ],
+  characters: characters,
+  form:{},
 };
 
 const reducers = combineReducers({
-  characters: (state = null, action) => state
+  characters: (state = null, action) => state,
+  form: formReducer,
 });
 
 const middlewares = applyMiddleware(logger, ReduxPromise);

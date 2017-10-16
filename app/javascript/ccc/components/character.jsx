@@ -14,11 +14,11 @@ const backgroundImage = (backgroundImage) => {
 // Did Not Create A React
 const renderAttribute = (value, prop) => {
   return(
-    <div className="fx-r-fs-c">
+    <div className="fx-r-sb-sa">
       <div className="ml-s fw-bold">
        {value}
       </div>
-      <div className="ml-s">
+      <div className="mr-xxl">
         {prop}
       </div>
     </div>
@@ -27,11 +27,13 @@ const renderAttribute = (value, prop) => {
 
 const Character = (props) => {
   return (
-    <div className="character active swingimage">
+    <div className="character">
       <div className="name fx-r-c-c fw-bold mt-xxs mb-xxs">{props.character.name}</div>
         <div className="thumbnail" style={backgroundImage(props.character.thumbnail)}></div>
-          {renderAttribute("chat","chaton")}
-        <div className="card-divider"> </div>
+          {renderAttribute("Life point",props.character.totalLifePoint)}
+          {renderAttribute("Attack point",props.character.attackPoint)}
+          {renderAttribute("Expé point",props.character.expPoint)}
+        <div className="mb-s"> </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import banner from 'fight.jpg'
 
 // Components
 import CharacterList from '../containers/character_list';
+import CreateCharacter from '../containers/create-character';
 
 // Helping Functions
 const bannerStyle = (backgroundImage) => {
@@ -36,6 +37,9 @@ const App = (props) => {
           Who gonna fight  ?
         </h2>
         <CharacterList />
+        <div className="mt-l fx-r-sa-sa">
+          <CreateCharacter />
+        </div>
       </div>
     </div>
   );
